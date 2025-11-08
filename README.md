@@ -187,6 +187,77 @@ curl -s "https://api.geckoterminal.com/api/v2/networks/base/pools" | jq .
 
 ---
 
+## 3. Анализ концентрированной ликвидности пулов
+
+### Описание
+
+Скрипты для анализа on-chain данных пулов с концентрированной ликвидностью (Uniswap V3, Aerodrome Slipstream, PancakeSwap V3).
+
+Получают:
+- Текущий тик (current tick)
+- SqrtPriceX96 (цена в формате Uniswap V3)
+- Активную ликвидность в текущем диапазоне
+- Реальные цены токенов
+
+### Использование скриптов
+
+#### Базовый анализ
+
+```bash
+python3 get_pool_liquidity.py
+```
+
+Получает топ-10 пулов и показывает их концентрированную ликвидность.
+
+#### Детальный анализ со статистикой
+
+```bash
+python3 analyze_pool_liquidity.py
+```
+
+Выводит:
+- Подробные данные о каждом пуле
+- Текущие тики и цены
+- Активную ликвидность
+- Эффективность пулов (Volume/TVL ratio)
+- Топ-3 пулов по различным метрикам
+
+### Результаты анализа
+
+**Топ-3 пула по активной ликвидности:**
+1. VIRTUAL / WETH 0.05% - 94.91e21
+2. VIRTUAL / WETH 0.05% - 89.84e21
+3. ZEN / WETH 0.15% - 26.35e21
+
+**Топ-3 пула по эффективности (Volume/TVL):**
+1. WETH / USDC 0.01% - 33.07x
+2. WETH / cbBTC 0.01% - 32.47x
+3. VIRTUAL / WETH 0.05% - 18.00x
+
+### Как это работает
+
+1. **GeckoTerminal API** - получение топ пулов по объему
+2. **eth_call к reth ноде** - запрос on-chain данных:
+   - `slot0()` - текущий тик и sqrtPriceX96
+   - `liquidity()` - активная ликвидность
+3. **Декодирование** - конвертация ABI-encoded данных
+4. **Расчет цен** - из тика и sqrtPriceX96
+
+### Что такое концентрированная ликвидность?
+
+В Uniswap V3 и подобных протоколах ликвидность концентрируется в определенных ценовых диапазонах:
+
+- **Tick** - дискретная единица цены (~0.01% изменения)
+- **Active Liquidity** - ликвидность доступная для торговли в текущем тике
+- **sqrtPriceX96** - корень квадратный из цены, умноженный на 2^96
+
+Преимущества:
+- Более эффективное использование капитала
+- Меньшее проскальзывание в активном диапазоне
+- Возможность кастомизации стратегий LP
+
+---
+
 ## Файлы в репозитории
 
 ### Reth Node Testing
@@ -197,6 +268,10 @@ curl -s "https://api.geckoterminal.com/api/v2/networks/base/pools" | jq .
 - `test_geckoterminal_api.py` - Python скрипт для работы с API
 - `test_geckoterminal.sh` - Bash скрипт для быстрых запросов
 - `GECKOTERMINAL_API.md` - Полная документация по API
+
+### On-Chain Liquidity Analysis
+- `get_pool_liquidity.py` - Базовый анализ ликвидности пулов
+- `analyze_pool_liquidity.py` - Детальный анализ со статистикой
 
 ### Документация
 - `README.md` - Этот файл
@@ -210,10 +285,11 @@ curl -s "https://api.geckoterminal.com/api/v2/networks/base/pools" | jq .
 - `requests` библиотека: `pip3 install requests`
 - `curl`, `jq`, `bc` (для bash скрипта)
 
-### Для GeckoTerminal скриптов
+### Для GeckoTerminal и Liquidity Analysis скриптов
 - Python 3.x
 - `requests` библиотека: `pip3 install requests`
 - `curl`, `jq` (для bash скрипта)
+- Доступ к reth ноде на Base (для on-chain запросов)
 
 ---
 
@@ -222,5 +298,14 @@ curl -s "https://api.geckoterminal.com/api/v2/networks/base/pools" | jq .
 Этот репозиторий предоставляет полный набор инструментов для работы с Base Network:
 - ✅ Тестирование собственной reth ноды
 - ✅ Получение данных о DEX пулах через GeckoTerminal API
+- ✅ On-chain анализ концентрированной ликвидности
 - ✅ Скрипты на Python и Bash
 - ✅ Подробная документация
+
+### Возможности
+
+1. **RPC Node Testing** - проверка работоспособности Ethereum-совместимой ноды
+2. **DEX Analytics** - получение данных о торговых парах, объемах, ликвидности
+3. **On-Chain Queries** - прямые запросы к смарт-контрактам пулов
+4. **Liquidity Analysis** - анализ концентрированной ликвидности в V3 пулах
+5. **Price Calculations** - расчет цен из тиков и sqrtPriceX96

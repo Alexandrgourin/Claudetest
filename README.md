@@ -1,4 +1,11 @@
-# Тестирование Reth ноды для Base сети
+# Тестирование Base Network
+
+Этот репозиторий содержит скрипты и документацию для работы с Base Network:
+
+1. **Тестирование Reth ноды** - проверка работоспособности собственной ноды
+2. **GeckoTerminal API** - получение данных о DEX пулах и ликвидности
+
+## 1. Тестирование Reth ноды
 
 Результаты тестирования reth ноды, развернутой для Base Mainnet.
 
@@ -109,3 +116,111 @@ curl -X POST http://80.209.241.37:8545/ \
 - Низкие комиссии (< 0.002 gwei)
 
 Нода готова к использованию для взаимодействия с Base Mainnet.
+
+---
+
+## 2. GeckoTerminal API
+
+### Описание
+
+GeckoTerminal API предоставляет данные о DEX пулах на Base Network, включая:
+- Ликвидность (TVL) пулов
+- Объемы торгов
+- Количество транзакций
+- Изменения цен
+
+### Использование скриптов
+
+#### Python скрипт (детальный анализ)
+
+```bash
+python3 test_geckoterminal_api.py
+```
+
+Скрипт выводит:
+- Топ-5 пулов по количеству транзакций за 24 часа
+- Топ-5 самых активных пулов за последний час
+- Топ-5 пулов по ликвидности
+- Список доступных параметров сортировки
+
+#### Bash скрипт (быстрый запрос)
+
+```bash
+./test_geckoterminal.sh
+```
+
+### Доступные параметры сортировки
+
+| Параметр | Описание | Статус |
+|----------|----------|--------|
+| `h24_tx_count_desc` | По количеству транзакций за 24ч | ✅ Работает |
+| `h24_volume_usd_desc` | По объему торгов за 24ч | ⚠️ Иногда 503 |
+| `h6_volume_usd_desc` | По объему торгов за 6ч | ⚠️ Ограничено |
+| `h1_volume_usd_desc` | По объему торгов за 1ч | ❌ 400 Error |
+| Без параметра | По умолчанию (ликвидность) | ✅ Работает |
+
+### Топ-5 самых ликвидных пулов на Base
+
+1. **WETH / USDC 0.05%** (Aerodrome) - TVL: $35.59M, Vol: $141.69M/24h
+2. **USDC / WETH 0.05%** (Uniswap V3) - TVL: $21.94M, Vol: $36.38M/24h
+3. **WETH / USDC 0.01%** (PancakeSwap V3) - TVL: $7.94M, Vol: $98.16M/24h
+4. **cbBTC / WETH 0.01%** (PancakeSwap V3) - TVL: $4.92M, Vol: $72.12M/24h
+5. **ZEN / WETH 0.15%** (Aerodrome) - TVL: $4.70M, Vol: $16.64M/24h
+
+### Примеры запросов
+
+#### Получить топ пулы по транзакциям
+
+```bash
+curl -s "https://api.geckoterminal.com/api/v2/networks/base/pools?sort=h24_tx_count_desc" | jq .
+```
+
+#### Получить пулы по умолчанию
+
+```bash
+curl -s "https://api.geckoterminal.com/api/v2/networks/base/pools" | jq .
+```
+
+### Документация
+
+Подробная документация по API доступна в файле [GECKOTERMINAL_API.md](GECKOTERMINAL_API.md)
+
+---
+
+## Файлы в репозитории
+
+### Reth Node Testing
+- `test_reth_node.py` - Python скрипт для тестирования ноды
+- `test_reth_node.sh` - Bash скрипт для тестирования ноды
+
+### GeckoTerminal API
+- `test_geckoterminal_api.py` - Python скрипт для работы с API
+- `test_geckoterminal.sh` - Bash скрипт для быстрых запросов
+- `GECKOTERMINAL_API.md` - Полная документация по API
+
+### Документация
+- `README.md` - Этот файл
+
+---
+
+## Требования
+
+### Для Reth Node скриптов
+- Python 3.x
+- `requests` библиотека: `pip3 install requests`
+- `curl`, `jq`, `bc` (для bash скрипта)
+
+### Для GeckoTerminal скриптов
+- Python 3.x
+- `requests` библиотека: `pip3 install requests`
+- `curl`, `jq` (для bash скрипта)
+
+---
+
+## Заключение
+
+Этот репозиторий предоставляет полный набор инструментов для работы с Base Network:
+- ✅ Тестирование собственной reth ноды
+- ✅ Получение данных о DEX пулах через GeckoTerminal API
+- ✅ Скрипты на Python и Bash
+- ✅ Подробная документация

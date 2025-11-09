@@ -29,6 +29,32 @@ def rpc_call(method: str, params: List = None) -> Dict:
     except Exception as e:
         return {"error": str(e)}
 
+def calculate_active_liquidity_amounts(liquidity: int, sqrt_price_x96: int,
+                                       token0_decimals: int, token1_decimals: int) -> tuple:
+    """
+    Рассчитать реальные amounts токенов из параметра L на текущем тике
+
+    Формулы из Uniswap V3:
+    - amount0 (token0) = L / sqrtPriceX96 * 2^96
+    - amount1 (token1) = L * sqrtPriceX96 / 2^96
+
+    Возвращает виртуальные резервы доступные для торговли на текущем тике
+    """
+    if liquidity == 0 or sqrt_price_x96 == 0:
+        return (0.0, 0.0)
+
+    Q96 = 2 ** 96
+
+    # Виртуальные резервы на текущем тике
+    amount0_raw = (liquidity * Q96) // sqrt_price_x96
+    amount1_raw = (liquidity * sqrt_price_x96) // Q96
+
+    # Конвертируем с учетом decimals
+    amount0 = amount0_raw / (10 ** token0_decimals)
+    amount1 = amount1_raw / (10 ** token1_decimals)
+
+    return (amount0, amount1)
+
 def get_token_balance(token_address: str, holder_address: str, decimals: int) -> float:
     """
     Получить баланс токена через balanceOf()
@@ -248,6 +274,21 @@ def main():
         tvl_real_usd = (balance0 * token0.get("price_usd", 0) +
                         balance1 * token1.get("price_usd", 0))
 
+        # Рассчитываем активную ликвидность из параметра L
+        active_amount0, active_amount1 = calculate_active_liquidity_amounts(
+            state["liquidity"],
+            state["sqrt_price_x96"],
+            token0.get("decimals", 18),
+            token1.get("decimals", 18)
+        )
+
+        # Активная ликвидность в USD
+        active_liquidity_usd = (active_amount0 * token0.get("price_usd", 0) +
+                                active_amount1 * token1.get("price_usd", 0))
+
+        # Соотношение активной ликвидности к TVL
+        active_ratio = (active_liquidity_usd / tvl_real_usd * 100) if tvl_real_usd > 0 else 0
+
         # Считаем соотношение с GeckoTerminal TVL
         gecko_tvl = pool["tvl_usd_gecko"]
         tvl_diff_pct = ((tvl_real_usd - gecko_tvl) / gecko_tvl * 100) if gecko_tvl > 0 else 0
@@ -260,11 +301,15 @@ def main():
             "balance0": balance0,
             "balance1": balance1,
             "tvl_real_usd": tvl_real_usd,
-            "tvl_diff_pct": tvl_diff_pct
+            "tvl_diff_pct": tvl_diff_pct,
+            "active_amount0": active_amount0,
+            "active_amount1": active_amount1,
+            "active_liquidity_usd": active_liquidity_usd,
+            "active_ratio": active_ratio
         }
 
         results.append(result)
-        print(f"✅ TVL: ${tvl_real_usd:,.0f} ({tvl_diff_pct:+.1f}% vs Gecko)")
+        print(f"✅ TVL: ${tvl_real_usd:,.0f}, Active: ${active_liquidity_usd:,.0f} ({active_ratio:.1f}%)")
 
     if not results:
         print("\n❌ Нет данных для анализа")
@@ -273,21 +318,22 @@ def main():
     # Сортируем по реальному TVL
     results_by_tvl = sorted(results, key=lambda x: x["tvl_real_usd"], reverse=True)
 
-    print(f"\n{'='*160}")
+    print(f"\n{'='*170}")
     print(f"📊 ТОП-15 ПУЛОВ ПО РЕАЛЬНОМУ TVL (on-chain balances)")
-    print(f"{'='*160}\n")
+    print(f"{'='*170}\n")
 
-    print(f"{'Пул':<45} {'TVL (real)':>15} {'TVL (Gecko)':>15} {'Diff':>8} {'Liquidity L':>18} {'Tick':>8} {'Volume 24h':>15}")
-    print(f"{'-'*160}")
+    print(f"{'Пул':<45} {'TVL':>15} {'Active Liq':>15} {'Ratio':>8} {'Tick':>8} {'Volume 24h':>15} {'Vol/TVL':>10}")
+    print(f"{'-'*170}")
 
     for i, pool in enumerate(results_by_tvl[:15], 1):
+        vol_tvl_ratio = (pool['volume_24h'] / pool['tvl_real_usd']) if pool['tvl_real_usd'] > 0 else 0
         print(f"{pool['name'][:43]:<45} "
               f"${pool['tvl_real_usd']:>13,.0f} "
-              f"${pool['tvl_usd_gecko']:>13,.0f} "
-              f"{pool['tvl_diff_pct']:>6.1f}% "
-              f"{pool['liquidity_param']:>18,} "
+              f"${pool['active_liquidity_usd']:>13,.0f} "
+              f"{pool['active_ratio']:>6.1f}% "
               f"{pool['tick']:>8,} "
-              f"${pool['volume_24h']:>13,.0f}")
+              f"${pool['volume_24h']:>13,.0f} "
+              f"{vol_tvl_ratio:>9.2f}x")
 
     # Детальный анализ топ-3
     print(f"\n{'='*160}")
@@ -314,14 +360,20 @@ def main():
         print(f"   On-chain TVL:        ${pool['tvl_real_usd']:>15,.2f}")
         print(f"   Difference:          {pool['tvl_diff_pct']:>14,.2f}%")
         print()
-        print(f"📈 АКТИВНАЯ ЛИКВИДНОСТЬ:")
+        print(f"📈 АКТИВНАЯ ЛИКВИДНОСТЬ (текущий тик):")
         print(f"   Current Tick:        {pool['tick']:>15,}")
         print(f"   Current Price:       {pool['price']:>15.10f}")
-        print(f"   Liquidity (L):       {pool['liquidity_param']:>15,}")
         print()
-        print(f"   📝 Примечание: Liquidity (L) - это математический параметр Uniswap V3,")
-        print(f"       представляющий активную ликвидность на текущем тике.")
-        print(f"       Чем выше L относительно TVL, тем более концентрирована ликвидность.")
+        print(f"   {token0['symbol']:<10} active:  {pool['active_amount0']:>20,.6f} × ${token0['price_usd']:<10,.2f} = ${pool['active_amount0'] * token0['price_usd']:>15,.2f}")
+        print(f"   {token1['symbol']:<10} active:  {pool['active_amount1']:>20,.6f} × ${token1['price_usd']:<10,.6f} = ${pool['active_amount1'] * token1['price_usd']:>15,.2f}")
+        print(f"   {'TOTAL':<10}          {' '*20}   {' '*12}   ${pool['active_liquidity_usd']:>15,.2f}")
+        print()
+        print(f"   Active/TVL Ratio:    {pool['active_ratio']:>15,.1f}%")
+        print()
+        print(f"   📝 Примечание: Активная ликвидность рассчитана из параметра L через формулы:")
+        print(f"      amount0 = L / sqrtPriceX96 × 2^96")
+        print(f"      amount1 = L × sqrtPriceX96 / 2^96")
+        print(f"      Это виртуальные резервы доступные для торговли на текущем тике.")
         print()
         print(f"💹 ТОРГОВЛЯ:")
         print(f"   24h Volume:          ${pool['volume_24h']:>15,.2f}")
@@ -330,22 +382,25 @@ def main():
 
     # Статистика
     avg_diff = sum(abs(p["tvl_diff_pct"]) for p in results) / len(results)
+    avg_active_ratio = sum(p["active_ratio"] for p in results) / len(results)
 
     print(f"{'='*160}")
     print(f"📊 СТАТИСТИКА")
     print(f"{'='*160}\n")
-    print(f"Всего проанализировано пулов:        {len(results)}")
-    print(f"Средняя разница TVL (on-chain vs Gecko): {avg_diff:.2f}%")
+    print(f"Всего проанализировано пулов:              {len(results)}")
+    print(f"Средняя разница TVL (on-chain vs Gecko):   {avg_diff:.2f}%")
+    print(f"Среднее соотношение Active/TVL:            {avg_active_ratio:.1f}%")
     print()
     print(f"💡 ВЫВОДЫ:")
     print()
     print(f"   ✅ Реальный TVL получен через on-chain balanceOf() для каждого токена")
     print(f"   ✅ Разница с GeckoTerminal минимальна (средняя {avg_diff:.1f}%), что подтверждает точность")
-    print(f"   ✅ Liquidity parameter (L) показывает концентрацию ликвидности на текущем тике")
+    print(f"   ✅ Активная ликвидность рассчитана из параметра L по формулам Uniswap V3")
     print()
-    print(f"   📌 В Uniswap V3 'активная ликвидность' = ликвидность на текущем price tick")
-    print(f"   📌 Параметр L - это сумма всех LP позиций, которые включают текущий tick")
-    print(f"   📌 Более высокий L означает большую глубину (depth) для торговли")
+    print(f"   📌 Активная ликвидность = виртуальные резервы доступные для торговли на текущем тике")
+    print(f"   📌 Среднее соотношение Active/TVL: {avg_active_ratio:.1f}% - показывает концентрацию ликвидности")
+    print(f"   📌 Высокий Active/TVL (>50%) = сильно концентрированная ликвидность = меньше slippage")
+    print(f"   📌 Низкий Active/TVL (<20%) = широко распределенная ликвидность = больше slippage")
     print()
 
 if __name__ == "__main__":

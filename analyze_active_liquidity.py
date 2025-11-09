@@ -91,38 +91,57 @@ def get_pool_state(pool_address: str) -> Optional[Dict]:
     except Exception as e:
         return None
 
-def estimate_liquidity_usd(liquidity: int, sqrt_price: int, tvl_usd: float) -> float:
+def calculate_liquidity_usd(liquidity: int, sqrt_price_x96: int,
+                           token0_price_usd: float, token1_price_usd: float,
+                           token0_decimals: int, token1_decimals: int) -> float:
     """
-    Оценить активную ликвидность в USD
+    Правильный расчет активной ликвидности в USD из on-chain данных
 
-    Упрощенная оценка на основе соотношения с TVL
-    В реальности нужен сложный расчет через sqrtPrice и amounts
+    Использует формулы Uniswap V3 для вычисления виртуальных резервов:
+    - reserve0 = liquidity / sqrtPriceX96 * 2^96
+    - reserve1 = liquidity * sqrtPriceX96 / 2^96
+
+    Затем конвертирует в USD используя цены токенов и decimals
     """
-    if liquidity == 0 or sqrt_price == 0:
+    if liquidity == 0 or sqrt_price_x96 == 0:
         return 0
 
-    # Используем TVL как baseline и корректируем
-    # Это упрощение, но дает примерную оценку
+    try:
+        # Константы
+        Q96 = 2**96
 
-    # Обычно активная ликвидность составляет 20-80% от TVL
-    # в зависимости от концентрации позиций
+        # Вычисляем виртуальные резервы из liquidity
+        # reserve0 (token0) = L / sqrtP * Q96
+        reserve0_raw = (liquidity * Q96) / sqrt_price_x96
 
-    # Более точный расчет требует:
-    # - token0 decimals
-    # - token1 decimals
-    # - amounts в каждом токене
+        # reserve1 (token1) = L * sqrtP / Q96
+        reserve1_raw = (liquidity * sqrt_price_x96) / Q96
 
-    # Для простоты используем heuristic
-    estimated_usd = tvl_usd * 0.5  # Консервативно 50%
+        # Конвертируем с учетом decimals
+        reserve0 = reserve0_raw / (10 ** token0_decimals)
+        reserve1 = reserve1_raw / (10 ** token1_decimals)
 
-    return estimated_usd
+        # Считаем USD стоимость
+        value0_usd = reserve0 * token0_price_usd
+        value1_usd = reserve1 * token1_price_usd
+
+        # Общая активная ликвидность
+        total_liquidity_usd = value0_usd + value1_usd
+
+        return total_liquidity_usd
+
+    except Exception as e:
+        return 0
 
 def get_top_pools(limit=20):
-    """Получить топ пулы с GeckoTerminal"""
+    """Получить топ пулы с GeckoTerminal включая данные токенов"""
     url = f"{GECKOTERMINAL_API}/networks/base/pools"
 
     try:
-        response = requests.get(url, params={"page": 1}, timeout=10)
+        response = requests.get(url, params={
+            "page": 1,
+            "include": "base_token,quote_token"
+        }, timeout=10)
 
         if response.status_code != 200:
             return []
@@ -130,8 +149,20 @@ def get_top_pools(limit=20):
         data = response.json()
         pools = []
 
+        # Создаем словарь токенов из included для быстрого поиска
+        tokens_map = {}
+        for item in data.get("included", []):
+            if item.get("type") == "token":
+                token_attrs = item.get("attributes", {})
+                tokens_map[item.get("id")] = {
+                    "address": token_attrs.get("address"),
+                    "symbol": token_attrs.get("symbol"),
+                    "decimals": int(token_attrs.get("decimals", 18)),
+                }
+
         for pool in data.get("data", [])[:limit]:
             attrs = pool.get("attributes", {})
+            relationships = pool.get("relationships", {})
 
             volume_data = attrs.get("volume_usd", {})
             volume_24h = 0
@@ -140,18 +171,46 @@ def get_top_pools(limit=20):
             elif isinstance(volume_data, (int, float)):
                 volume_24h = float(volume_data)
 
+            # Получаем данные токенов из relationships
+            base_token_id = relationships.get("base_token", {}).get("data", {}).get("id")
+            quote_token_id = relationships.get("quote_token", {}).get("data", {}).get("id")
+
+            # Получаем decimals из tokens_map и цены из attrs
+            base_token_data = tokens_map.get(base_token_id, {}).copy()
+            quote_token_data = tokens_map.get(quote_token_id, {}).copy()
+
+            # Добавляем цены из pool attributes
+            base_token_data["price_usd"] = float(attrs.get("base_token_price_usd") or 0)
+            quote_token_data["price_usd"] = float(attrs.get("quote_token_price_usd") or 0)
+
+            # В Uniswap V3: token0 < token1 по адресу (лексикографически)
+            # Нужно определить правильный порядок
+            base_addr = base_token_data.get("address", "").lower()
+            quote_addr = quote_token_data.get("address", "").lower()
+
+            if base_addr and quote_addr and base_addr < quote_addr:
+                # base = token0, quote = token1
+                token0, token1 = base_token_data, quote_token_data
+            else:
+                # quote = token0, base = token1
+                token0, token1 = quote_token_data, base_token_data
+
             pools.append({
                 "address": attrs.get("address"),
                 "name": attrs.get("name", ""),
                 "dex": attrs.get("dex", ""),
                 "tvl_usd": float(attrs.get("reserve_in_usd", 0)),
                 "volume_24h": volume_24h,
+                "token0": token0,
+                "token1": token1,
             })
 
         return pools
 
     except Exception as e:
+        import traceback
         print(f"❌ Ошибка: {e}")
+        traceback.print_exc()
         return []
 
 def main():
@@ -189,12 +248,35 @@ def main():
             print("❌ Нет данных")
             continue
 
-        # Оцениваем активную ликвидность в USD (упрощенно)
-        active_liquidity_usd = estimate_liquidity_usd(
+        # Проверяем наличие данных токенов
+        token0 = pool.get("token0", {})
+        token1 = pool.get("token1", {})
+
+        if not token0 or not token1:
+            print("❌ Нет данных токенов")
+            continue
+
+        # Рассчитываем активную ликвидность в USD используя реальные данные
+        active_liquidity_usd = calculate_liquidity_usd(
             state["liquidity"],
             state["sqrt_price_x96"],
-            pool["tvl_usd"]
+            token0.get("price_usd", 0),
+            token1.get("price_usd", 0),
+            token0.get("decimals", 18),
+            token1.get("decimals", 18)
         )
+
+        # DEBUG: первый успешный пул
+        if len(results) == 0 and active_liquidity_usd > 0:
+            print(f"\n   🔍 DEBUG первого пула:")
+            print(f"   Name: {pool['name']}")
+            print(f"   Liquidity raw: {state['liquidity']}")
+            print(f"   sqrtPriceX96: {state['sqrt_price_x96']}")
+            print(f"   token0: {token0.get('symbol')} decimals={token0.get('decimals')} price=${token0.get('price_usd')}")
+            print(f"   token1: {token1.get('symbol')} decimals={token1.get('decimals')} price=${token1.get('price_usd')}")
+            print(f"   Active Liquidity USD: ${active_liquidity_usd:,.2f}")
+            print(f"   TVL USD: ${pool['tvl_usd']:,.2f}")
+            print(f"   Ratio: {(active_liquidity_usd / pool['tvl_usd'] * 100):.1f}%\n")
 
         # Рассчитываем соотношение
         active_ratio = (active_liquidity_usd / pool["tvl_usd"] * 100) if pool["tvl_usd"] > 0 else 0

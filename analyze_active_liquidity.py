@@ -222,23 +222,23 @@ def main():
     results_by_active = sorted(results, key=lambda x: x["active_liquidity_usd"], reverse=True)
 
     print(f"\n{'='*140}")
-    print(f"📊 ТОП-10 ПУЛОВ ПО TVL")
+    print(f"📊 ТОП-15 ПУЛОВ ПО TVL")
     print(f"{'='*140}\n")
 
     print(f"{'Пул':<45} {'TVL':>12} {'Active Liq':>12} {'Ratio':>8} {'Current Tick':>13} {'Volume 24h':>12}")
     print(f"{'-'*140}")
 
-    for i, pool in enumerate(results_by_tvl[:10], 1):
+    for i, pool in enumerate(results_by_tvl[:15], 1):
         print(f"{pool['name'][:43]:<45} ${pool['tvl_usd']:>10,.0f} ${pool['active_liquidity_usd']:>10,.0f} {pool['active_ratio']:>6.1f}% {pool['tick']:>13,} ${pool['volume_24h']:>10,.0f}")
 
     print(f"\n{'='*140}")
-    print(f"🔥 ТОП-10 ПУЛОВ ПО АКТИВНОЙ ЛИКВИДНОСТИ")
+    print(f"🔥 ТОП-15 ПУЛОВ ПО АКТИВНОЙ ЛИКВИДНОСТИ")
     print(f"{'='*140}\n")
 
     print(f"{'Пул':<45} {'Active Liq':>12} {'TVL':>12} {'Ratio':>8} {'Current Tick':>13} {'Volume 24h':>12}")
     print(f"{'-'*140}")
 
-    for i, pool in enumerate(results_by_active[:10], 1):
+    for i, pool in enumerate(results_by_active[:15], 1):
         print(f"{pool['name'][:43]:<45} ${pool['active_liquidity_usd']:>10,.0f} ${pool['tvl_usd']:>10,.0f} {pool['active_ratio']:>6.1f}% {pool['tick']:>13,} ${pool['volume_24h']:>10,.0f}")
 
     # Статистика

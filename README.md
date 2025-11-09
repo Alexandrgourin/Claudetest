@@ -6,6 +6,50 @@
 2. **GeckoTerminal API** - получение данных о DEX пулах и ликвидности
 3. **On-chain анализ ликвидности** - анализ концентрированной ликвидности в DEX пулах
 4. **Мониторинг мемпула** - отслеживание pending транзакций и анализ формирования блоков
+5. **MEV стратегии с Flashblocks** - возможности заработка с использованием собственной ноды
+
+---
+
+## 🚀 MEV с Flashblocks
+
+Наличие собственной ноды с поддержкой **flashblocks** на Base открывает уникальные возможности для заработка через MEV (Maximal Extractable Value) стратегии.
+
+### Быстрый старт
+
+```bash
+# Real-time мониторинг арбитража
+python3 realtime_arbitrage_monitor.py 60
+
+# Детальное сканирование возможностей
+python3 detailed_arbitrage_scan.py
+```
+
+### Документация
+
+- 📘 [MEV_OPPORTUNITIES.md](MEV_OPPORTUNITIES.md) - подробный анализ всех возможностей заработка (15+ стратегий)
+- 🚀 [MEV_QUICKSTART.md](MEV_QUICKSTART.md) - быстрый старт и практические примеры
+
+### Основные стратегии
+
+1. **Cross-DEX Arbitrage** - эксплуатация ценовых различий между DEX
+2. **Flash Loan Arbitrage** - масштабирование без собственного капитала
+3. **Liquidation Bots** - ликвидация undercollateralized позиций
+4. **JIT Liquidity** - Just-In-Time предоставление ликвидности
+5. **Backrunning** - размещение сделок после крупных swaps
+
+### Ожидаемый доход
+
+- **Tier 1** (Low Risk): $100-500/день с капиталом $5-20K
+- **Tier 2** (Medium Risk): $500-2,000/день с flash loans
+- **Tier 3** (High Risk): $2,000-10,000+/день для опытных
+
+### Преимущество Flashblocks
+
+⚡ **Скорость**: видите транзакции на 0.5-1 секунду раньше конкурентов
+👀 **Информация**: полный доступ к pending блокам
+🎯 **Контроль**: собственная инфраструктура без rate limits
+
+---
 
 ## 1. Тестирование Reth ноды
 
@@ -378,6 +422,11 @@ python3 monitor_mempool.py test
 - `monitor_mempool.py` - Мониторинг pending транзакций в мемпуле
 - `monitor_mempool.sh` - Bash скрипт для удобного запуска мониторинга
 
+### MEV & Flashblocks
+- `realtime_arbitrage_monitor.py` - Real-time мониторинг арбитража через flashblocks
+- `MEV_OPPORTUNITIES.md` - Подробный анализ возможностей заработка (15+ стратегий)
+- `MEV_QUICKSTART.md` - Быстрый старт и практические примеры
+
 ### Документация
 - `README.md` - Этот файл
 - `GECKOTERMINAL_API.md` - Документация GeckoTerminal API
@@ -407,6 +456,8 @@ python3 monitor_mempool.py test
 - ✅ On-chain анализ концентрированной ликвидности
 - ✅ Поиск арбитражных возможностей между DEX
 - ✅ Мониторинг мемпула и pending транзакций
+- ✅ MEV стратегии с использованием flashblocks
+- ✅ Real-time арбитраж мониторинг
 - ✅ Скрипты на Python и Bash
 - ✅ Подробная документация
 
@@ -419,3 +470,5 @@ python3 monitor_mempool.py test
 5. **Price Calculations** - расчет цен из тиков и sqrtPriceX96
 6. **Arbitrage Detection** - поиск ценовых расхождений между DEX платформами
 7. **Mempool Monitoring** - мониторинг pending транзакций для MEV и анализа сети
+8. **MEV Strategies** - 15+ стратегий заработка с использованием flashblocks
+9. **Real-time Monitoring** - автоматическое обнаружение арбитражных возможностей

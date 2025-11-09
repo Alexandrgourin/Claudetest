@@ -34,8 +34,27 @@ python3 detailed_arbitrage_scan.py
 1. **Cross-DEX Arbitrage** - эксплуатация ценовых различий между DEX
 2. **Flash Loan Arbitrage** - масштабирование без собственного капитала
 3. **Liquidation Bots** - ликвидация undercollateralized позиций
-4. **JIT Liquidity** - Just-In-Time предоставление ликвидности
+4. **JIT Liquidity** ⭐ - Just-In-Time предоставление ликвидности (высокая прибыльность!)
 5. **Backrunning** - размещение сделок после крупных swaps
+
+### JIT Liquidity Детектор
+
+```bash
+# Мониторинг JIT возможностей
+python3 jit_opportunity_detector.py 60
+
+# Или через wrapper
+./jit_detector.sh 60
+```
+
+**Как работает JIT:**
+1. Flashblocks показывает крупный pending swap ($100K+)
+2. Добавляете концентрированную ликвидность за 1 блок до swap
+3. Swap исполняется - вы получаете 70%+ комиссий
+4. Убираете ликвидность сразу после
+5. Profit $100-10,000 за 4 секунды! 🚀
+
+📘 Подробный гайд: [JIT_LIQUIDITY_GUIDE.md](JIT_LIQUIDITY_GUIDE.md)
 
 ### Ожидаемый доход
 
@@ -424,8 +443,11 @@ python3 monitor_mempool.py test
 
 ### MEV & Flashblocks
 - `realtime_arbitrage_monitor.py` - Real-time мониторинг арбитража через flashblocks
+- `jit_opportunity_detector.py` - Детектор JIT Liquidity возможностей
+- `jit_detector.sh` - Bash wrapper для JIT детектора
 - `MEV_OPPORTUNITIES.md` - Подробный анализ возможностей заработка (15+ стратегий)
 - `MEV_QUICKSTART.md` - Быстрый старт и практические примеры
+- `JIT_LIQUIDITY_GUIDE.md` - Полный гайд по JIT Liquidity стратегии
 
 ### Документация
 - `README.md` - Этот файл

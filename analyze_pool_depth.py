@@ -101,9 +101,20 @@ def decode_tick(tick_hex: str) -> int:
 
     return tick
 
-def tick_to_price(tick: int) -> float:
-    """Конвертировать tick в цену (token1/token0)"""
-    return 1.0001 ** tick
+def tick_to_price(tick: int, token0_decimals: int = 18, token1_decimals: int = 6) -> float:
+    """
+    Конвертировать tick в цену с учетом decimals
+
+    Returns: price (token1 per token0) - сколько token1 за 1 token0
+    Для WETH/USDC: возвращает сколько USDC за 1 WETH
+    """
+    # Raw price (без decimals)
+    price_raw = 1.0001 ** tick
+
+    # Корректируем на decimals: price = price_raw * 10^decimals0 / 10^decimals1
+    price_adjusted = price_raw * (10 ** token0_decimals) / (10 ** token1_decimals)
+
+    return price_adjusted
 
 def parse_mint_event(event: Dict, debug=False) -> Dict:
     """
@@ -229,7 +240,7 @@ def build_liquidity_distribution(mint_events: List[Dict], burn_events: List[Dict
     return result
 
 def calculate_slippage(current_tick: int, tick_liquidity: Dict[int, int],
-                      swap_amount_token1: float, token1_decimals: int) -> Dict:
+                      swap_amount_token1: float, token0_decimals: int, token1_decimals: int) -> Dict:
     """
     Рассчитать slippage для свопа определенного размера
 

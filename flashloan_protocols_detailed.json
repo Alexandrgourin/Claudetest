@@ -1,0 +1,87 @@
+{
+  "protocols": {
+    "aave-v3": {
+      "name": "AAVE V3",
+      "pool": "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
+      "pool_data_provider": "0x2d8A3C5677189723C4cB8873CfC9C8976FDF38Ac",
+      "oracle": "0x2Cc0Fc26eD4563A5ce5e8bdcfe1A2878676Ae156",
+      "flashloan_fee": 0.0009,
+      "docs": "https://docs.aave.com/developers/guides/flash-loans",
+      "method": "flashLoan",
+      "features": [
+        "Supports multi-asset flashloans",
+        "No collateral required",
+        "Single transaction execution",
+        "Premium fee: 0.09%"
+      ]
+    },
+    "morpho": {
+      "name": "Morpho",
+      "known_vaults": [],
+      "flashloan_fee": 0,
+      "docs": "https://docs.morpho.org",
+      "method": "Varies by vault",
+      "features": [
+        "Optimized lending rates",
+        "May have lower fees than AAVE",
+        "Need to check specific vault"
+      ]
+    },
+    "compound-v3": {
+      "name": "Compound V3",
+      "comet_usdc": "0xb125E6687d4313864e53df431d5425969c15Eb2F",
+      "comet_weth": "0x46e6b214b524310239732D51387075E0e70970bf",
+      "flashloan_fee": 0,
+      "docs": "https://docs.compound.finance",
+      "method": "flashLoan",
+      "features": [
+        "0% flashloan fee! \ud83d\udd25",
+        "Separate markets for each asset",
+        "Must implement IFlashLoanReceiver",
+        "Best option if asset available"
+      ]
+    },
+    "euler-v2": {
+      "name": "Euler V2",
+      "euler_vault_kit": "Need to query",
+      "flashloan_fee": 0.0001,
+      "docs": "https://docs.euler.finance",
+      "method": "flashLoan",
+      "features": [
+        "Very low fees",
+        "Modular vault system",
+        "May vary by vault"
+      ]
+    },
+    "radiant": {
+      "name": "Radiant V2",
+      "pool": "Need to find address",
+      "flashloan_fee": 0.0009,
+      "docs": "https://docs.radiant.capital",
+      "method": "flashLoan",
+      "features": [
+        "AAVE V2 fork",
+        "Similar to AAVE mechanics",
+        "Cross-chain capabilities"
+      ]
+    }
+  },
+  "comparison": {
+    "cheapest": "Compound V3 (0% fee)",
+    "most_versatile": "AAVE V3 (multi-asset)",
+    "recommendation": "Use Compound V3 for USDC/WETH, AAVE V3 for others"
+  },
+  "strategy": {
+    "optimal_flow": [
+      "1. Detect liquidation opportunity on AAVE/Morpho",
+      "2. Get flashloan from Compound V3 (0% fee) or AAVE (0.09%)",
+      "3. Execute liquidation (receive collateral + bonus)",
+      "4. Swap collateral to debt asset on DEX",
+      "5. Repay flashloan",
+      "6. Profit = liquidation_bonus - dex_fee - gas"
+    ],
+    "profit_formula": "profit = (debt * liquidation_bonus) - (debt * flashloan_fee) - (collateral * dex_fee) - gas_cost",
+    "min_profitable_debt": 1000,
+    "expected_roi": "2-5% per liquidation"
+  }
+}

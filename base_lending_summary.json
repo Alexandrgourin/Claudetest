@@ -1,0 +1,1067 @@
+{
+  "chain": "Base",
+  "total_protocols_analyzed": 20,
+  "yields_pools_found": 232,
+  "timestamp": 1763047400.0882332,
+  "protocols_summary": [
+    {
+      "name": "Morpho V1",
+      "slug": "morpho-v1",
+      "category": "Lending",
+      "tvl_base": 2003886321,
+      "tvl_total": 0,
+      "twitter": "MorphoLabs",
+      "url": "https://app.morpho.org",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Aave V3",
+      "slug": "aave-v3",
+      "category": "Lending",
+      "tvl_base": 988730628,
+      "tvl_total": 0,
+      "twitter": "aave",
+      "url": "https://aave.com",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Moonwell Lending",
+      "slug": "moonwell-lending",
+      "category": "Lending",
+      "tvl_base": 107235159,
+      "tvl_total": 0,
+      "twitter": "MoonwellDeFi",
+      "url": "https://moonwell.fi",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Fluid Lending",
+      "slug": "fluid-lending",
+      "category": "Lending",
+      "tvl_base": 57377452,
+      "tvl_total": 0,
+      "twitter": "0xfluid",
+      "url": "https://fluid.instadapp.io",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "River Omni-CDP",
+      "slug": "river-omni-cdp",
+      "category": "CeDeFi",
+      "tvl_base": 57387898,
+      "tvl_total": 0,
+      "twitter": "RiverdotInc",
+      "url": "https://app.river.inc/",
+      "has_audit": true,
+      "flashloan_likely": false
+    },
+    {
+      "name": "Compound V3",
+      "slug": "compound-v3",
+      "category": "Lending",
+      "tvl_base": 50785090,
+      "tvl_total": 0,
+      "twitter": "compoundfinance",
+      "url": "https://v3-app.compound.finance/",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "40 Acres",
+      "slug": "40-acres",
+      "category": "Lending",
+      "tvl_base": 28538363,
+      "tvl_total": 0,
+      "twitter": "40acres_Finance",
+      "url": "https://www.40acres.finance/",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Seamless V2",
+      "slug": "seamless-v2",
+      "category": "Lending",
+      "tvl_base": 10039527,
+      "tvl_total": 0,
+      "twitter": "SeamlessFi",
+      "url": "https://www.seamlessprotocol.com",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Overnight Finance",
+      "slug": "overnight-finance",
+      "category": "CDP",
+      "tvl_base": 9358678,
+      "tvl_total": 0,
+      "twitter": "overnight_fi",
+      "url": "https://overnight.fi",
+      "has_audit": true,
+      "flashloan_likely": false
+    },
+    {
+      "name": "Euler V2",
+      "slug": "euler-v2",
+      "category": "Lending",
+      "tvl_base": 9189504,
+      "tvl_total": 0,
+      "twitter": "eulerfinance",
+      "url": "https://www.euler.finance",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Extra Finance Xlend",
+      "slug": "extra-finance-xlend",
+      "category": "Lending",
+      "tvl_base": 5810412,
+      "tvl_total": 0,
+      "twitter": "extrafi_io",
+      "url": "https://xlend.extrafi.io/",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "QiDao",
+      "slug": "qidao",
+      "category": "CDP",
+      "tvl_base": 2895179,
+      "tvl_total": 0,
+      "twitter": "QiDaoProtocol",
+      "url": "https://app.mai.finance",
+      "has_audit": true,
+      "flashloan_likely": false
+    },
+    {
+      "name": "Seamless V1",
+      "slug": "seamless-v1",
+      "category": "Lending",
+      "tvl_base": 2410628,
+      "tvl_total": 0,
+      "twitter": "SeamlessFi",
+      "url": "https://www.seamlessprotocol.com",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Radiant V2",
+      "slug": "radiant-v2",
+      "category": "Lending",
+      "tvl_base": 2483919,
+      "tvl_total": 0,
+      "twitter": "RDNTCapital",
+      "url": "https://radiant.capital/#/markets",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Tarot",
+      "slug": "tarot",
+      "category": "Lending",
+      "tvl_base": 1696302,
+      "tvl_total": 0,
+      "twitter": "TarotFinance",
+      "url": "https://www.tarot.to",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Teller",
+      "slug": "teller",
+      "category": "Lending",
+      "tvl_base": 2172765,
+      "tvl_total": 0,
+      "twitter": "useteller",
+      "url": "https://teller.org",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Impermax V3",
+      "slug": "impermax-v3",
+      "category": "Lending",
+      "tvl_base": 1012238,
+      "tvl_total": 0,
+      "twitter": "ImpermaxFinance",
+      "url": "https://impermax.finance",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Revert Lend",
+      "slug": "revert-lend",
+      "category": "Lending",
+      "tvl_base": 1713248,
+      "tvl_total": 0,
+      "twitter": "revertfinance",
+      "url": "https://revert.finance/#/lending",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Impermax V2",
+      "slug": "impermax-v2",
+      "category": "Lending",
+      "tvl_base": 947748,
+      "tvl_total": 0,
+      "twitter": "ImpermaxFinance",
+      "url": "https://impermax.finance/",
+      "has_audit": true,
+      "flashloan_likely": true
+    },
+    {
+      "name": "Native Credit Pool",
+      "slug": "native-credit-pool",
+      "category": "Lending",
+      "tvl_base": 1253889,
+      "tvl_total": 0,
+      "twitter": "native_fi",
+      "url": "https://native.org",
+      "has_audit": true,
+      "flashloan_likely": true
+    }
+  ],
+  "top_50_apy_pools": [
+    {
+      "pool_id": "4939e874-a7ce-4772-b813-eab535f90d1d",
+      "project": "morpho-v1",
+      "symbol": "LLUSDC",
+      "apy": 432.05374,
+      "apyBase": 432.05374,
+      "apyReward": 0,
+      "tvl": 40077,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "a4387b44-5429-44e6-bd8b-b625d11b747e",
+      "project": "morpho-v1",
+      "symbol": "PUSDCHY",
+      "apy": 192.0333,
+      "apyBase": 192.0333,
+      "apyReward": 0,
+      "tvl": 100014,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "72ed455d-1502-48a4-93c8-c052a26b085a",
+      "project": "morpho-v1",
+      "symbol": "MAXUSD",
+      "apy": 132.86334,
+      "apyBase": 132.86334,
+      "apyReward": 0,
+      "tvl": 37587,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "5bf828b8-5da4-4b61-af7c-00f282b4b2fe",
+      "project": "moonwell-lending",
+      "symbol": "VIRTUAL",
+      "apy": 127.95838,
+      "apyBase": 127.45673,
+      "apyReward": 0.50165,
+      "tvl": 430450,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x0b3e328455c4059eeb9e3f84b5543f74e24e7e1b"
+      ],
+      "rewardTokens": [
+        "0xA88594D404727625A9437C3f886C7643872296AE"
+      ]
+    },
+    {
+      "pool_id": "2d451b9b-455d-4283-bd21-990b0d588d7a",
+      "project": "morpho-v1",
+      "symbol": "CPT48",
+      "apy": 107.62454,
+      "apyBase": 107.62454,
+      "apyReward": 0,
+      "tvl": 49385,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "c9c64bb6-5d16-4f73-8618-a1c8cbe00ab6",
+      "project": "morpho-v1",
+      "symbol": "LTSTRAT-USDC",
+      "apy": 77.5893,
+      "apyBase": 77.5893,
+      "apyReward": 0,
+      "tvl": 154141,
+      "exposure": "multi",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "b15d778f-3312-4d0e-876a-1ad5d9900d87",
+      "project": "morpho-v1",
+      "symbol": "MCUSDC",
+      "apy": 54.77281,
+      "apyBase": 54.77281,
+      "apyReward": 0,
+      "tvl": 124492,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "52aa442e-188a-4da4-9d44-b9d4a2e38192",
+      "project": "moonwell-lending",
+      "symbol": "CBXRP",
+      "apy": 18.21762,
+      "apyBase": 17.89586,
+      "apyReward": 0.32176,
+      "tvl": 1901246,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0xcb585250f852c6c6bf90434ab21a00f02833a4af"
+      ],
+      "rewardTokens": [
+        "0xA88594D404727625A9437C3f886C7643872296AE"
+      ]
+    },
+    {
+      "pool_id": "8395e9c7-a26d-4e9c-a6e9-7cc002244979",
+      "project": "euler-v2",
+      "symbol": "USDC",
+      "apy": 15.0674,
+      "apyBase": 4.0315,
+      "apyReward": 11.03589,
+      "tvl": 347084,
+      "exposure": "single",
+      "pool_meta": "EVK Vault eUSDC-49",
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0x4200000000000000000000000000000000000042"
+      ]
+    },
+    {
+      "pool_id": "40f35944-f89d-442b-9659-3c25d2002581",
+      "project": "morpho-v1",
+      "symbol": "STEAKEURA",
+      "apy": 11.7362,
+      "apyBase": 11.7362,
+      "apyReward": 0,
+      "tvl": 119066,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0xA61BeB4A3d02decb01039e378237032B351125B4"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "6da0372c-8e39-40db-acde-e35090862457",
+      "project": "moonwell-lending",
+      "symbol": "EURC",
+      "apy": 8.7277,
+      "apyBase": 8.47727,
+      "apyReward": 0.25043,
+      "tvl": 180431,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42"
+      ],
+      "rewardTokens": [
+        "0xA88594D404727625A9437C3f886C7643872296AE"
+      ]
+    },
+    {
+      "pool_id": "fdfd4a07-e933-4f2a-90f8-f756e8e7e167",
+      "project": "morpho-v1",
+      "symbol": "APRUSDC",
+      "apy": 8.22282,
+      "apyBase": 8.22282,
+      "apyReward": 0,
+      "tvl": 67739,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "d184356d-69c9-4f6e-8b7b-5a0a3aa6ed27",
+      "project": "morpho-v1",
+      "symbol": "CSUSDC",
+      "apy": 7.42511,
+      "apyBase": 7.39426,
+      "apyReward": 0.03085,
+      "tvl": 935517,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "eecb1edd-76f4-4c90-aa82-5fa222fbc856",
+      "project": "morpho-v1",
+      "symbol": "HYCSUSDC",
+      "apy": 7.41428,
+      "apyBase": 7.41428,
+      "apyReward": 0,
+      "tvl": 2417279,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "7311a4f0-396d-4db1-82b5-6ab33337716b",
+      "project": "morpho-v1",
+      "symbol": "RE7USDC",
+      "apy": 7.34665,
+      "apyBase": 7.28823,
+      "apyReward": 0.05842,
+      "tvl": 4090477,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "585d1cb4-4dfe-45bf-b1b9-f761862906c7",
+      "project": "morpho-v1",
+      "symbol": "EXMUSDC",
+      "apy": 7.27541,
+      "apyBase": 6.73309,
+      "apyReward": 0.54231,
+      "tvl": 9635606,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "f7324920-1431-480e-8f13-af31d82c7742",
+      "project": "morpho-v1",
+      "symbol": "AT",
+      "apy": 7.22518,
+      "apyBase": 6.80235,
+      "apyReward": 0.42283,
+      "tvl": 11506,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "ba52482e-10d9-4305-b957-2cc9c6b8cb9c",
+      "project": "morpho-v1",
+      "symbol": "FRUSDC",
+      "apy": 7.16521,
+      "apyBase": 6.74238,
+      "apyReward": 0.42283,
+      "tvl": 37873420,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "fecaea98-00cb-4f35-beca-b6b7aeef1beb",
+      "project": "morpho-v1",
+      "symbol": "STEAKUSDC",
+      "apy": 7.16034,
+      "apyBase": 6.7375,
+      "apyReward": 0.42283,
+      "tvl": 29138119,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "2ab77a80-5e33-432b-beae-19b35682b59d",
+      "project": "morpho-v1",
+      "symbol": "YMVOG-USDC",
+      "apy": 7.11984,
+      "apyBase": 6.6527,
+      "apyReward": 0.46715,
+      "tvl": 647615,
+      "exposure": "multi",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842",
+        "0x4200000000000000000000000000000000000042"
+      ]
+    },
+    {
+      "pool_id": "f479527c-d615-470e-a5bd-72218a109d32",
+      "project": "morpho-v1",
+      "symbol": "PRIME",
+      "apy": 7.11653,
+      "apyBase": 6.74096,
+      "apyReward": 0.37557,
+      "tvl": 202871,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "389ededf-86f1-4e2a-b772-b6e6352de5ab",
+      "project": "morpho-v1",
+      "symbol": "GTUSDCF",
+      "apy": 7.08757,
+      "apyBase": 6.66474,
+      "apyReward": 0.42283,
+      "tvl": 692550,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "eb97755e-86c4-49a5-9cc6-7a635217a3df",
+      "project": "morpho-v1",
+      "symbol": "BBQUSDC",
+      "apy": 7.08274,
+      "apyBase": 6.65991,
+      "apyReward": 0.42283,
+      "tvl": 5638610,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "096c27bb-3ab5-480a-87fd-e4cfeba44c47",
+      "project": "morpho-v1",
+      "symbol": "MVUSDC",
+      "apy": 7.03036,
+      "apyBase": 6.74238,
+      "apyReward": 0.28798,
+      "tvl": 76036,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "a6ab98f6-85ef-478b-93ef-4b311c00d965",
+      "project": "morpho-v1",
+      "symbol": "MUSDC",
+      "apy": 7.02901,
+      "apyBase": 6.74283,
+      "apyReward": 0.28618,
+      "tvl": 15106,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "1643c124-f047-4fc5-9642-d6fa91875184",
+      "project": "morpho-v1",
+      "symbol": "MWUSDC",
+      "apy": 6.86467,
+      "apyBase": 6.74238,
+      "apyReward": 0.12229,
+      "tvl": 33059405,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "b6b2dd6c-de60-4d6f-9a30-85ec24c514d3",
+      "project": "morpho-v1",
+      "symbol": "GTUSDCP",
+      "apy": 6.82112,
+      "apyBase": 6.73504,
+      "apyReward": 0.08608,
+      "tvl": 72263632,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "7372edda-f07f-4598-83e5-4edec48c4039",
+      "project": "fluid-lending",
+      "symbol": "USDC",
+      "apy": 6.8,
+      "apyBase": 4.68,
+      "apyReward": 2.12,
+      "tvl": 25050777,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "0x61e030a56d33e8260fdd81f03b162a79fe3449cd"
+      ]
+    },
+    {
+      "pool_id": "76f65ec2-ea3d-42a2-9f9f-1542b48838e9",
+      "project": "euler-v2",
+      "symbol": "USDC",
+      "apy": 6.78193,
+      "apyBase": 6.78193,
+      "apyReward": null,
+      "tvl": 54749,
+      "exposure": "single",
+      "pool_meta": "EVK Vault eUSDC-29",
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": null
+    },
+    {
+      "pool_id": "9f146531-9c31-46ba-8e26-6b59bdaca9ff",
+      "project": "morpho-v1",
+      "symbol": "SPARKUSDC",
+      "apy": 6.74238,
+      "apyBase": 6.74238,
+      "apyReward": 0,
+      "tvl": 492082073,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "8305e930-82b7-4c27-b6a0-c50b6a2c1d74",
+      "project": "morpho-v1",
+      "symbol": "APUSDC",
+      "apy": 6.74238,
+      "apyBase": 6.74238,
+      "apyReward": 0,
+      "tvl": 493955,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "49af9322-5f77-42c3-8df5-df86fd6838eb",
+      "project": "morpho-v1",
+      "symbol": "IONICUSDC",
+      "apy": 6.74238,
+      "apyBase": 6.74238,
+      "apyReward": 0,
+      "tvl": 13164,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "3ad60cb7-74db-448b-9e3b-e6af576e697f",
+      "project": "morpho-v1",
+      "symbol": "STEAKUSDC",
+      "apy": 6.74015,
+      "apyBase": 6.74015,
+      "apyReward": 0,
+      "tvl": 365159977,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "4a22de3c-271e-4152-b8d8-29053de06f37",
+      "project": "morpho-v1",
+      "symbol": "SMUSDC",
+      "apy": 6.73968,
+      "apyBase": 6.73968,
+      "apyReward": 0,
+      "tvl": 37433293,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "ec325b8b-39d9-4bdc-b74d-c072da1f80c8",
+      "project": "morpho-v1",
+      "symbol": "SAFE-STEAKUSDC",
+      "apy": 6.7076,
+      "apyBase": 6.7076,
+      "apyReward": 0,
+      "tvl": 1022220,
+      "exposure": "multi",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "34d90c49-da88-49b2-937e-04c2b1f5d7fe",
+      "project": "morpho-v1",
+      "symbol": "GTUSDCC",
+      "apy": 6.66607,
+      "apyBase": 6.66607,
+      "apyReward": 0,
+      "tvl": 2584223,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "7747811b-6aa9-49ed-8d34-d9917379666f",
+      "project": "morpho-v1",
+      "symbol": "SIRLOINUSDC",
+      "apy": 6.63977,
+      "apyBase": 6.63977,
+      "apyReward": 0,
+      "tvl": 358005,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "bc4285d4-7b3e-447f-9557-b2b114c7033d",
+      "project": "morpho-v1",
+      "symbol": "EDGEUSDC",
+      "apy": 6.59102,
+      "apyBase": 6.16819,
+      "apyReward": 0.42283,
+      "tvl": 100006,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "7df67b08-41a6-4e20-8b93-b065239cb7fb",
+      "project": "morpho-v1",
+      "symbol": "DFORCEUSDC",
+      "apy": 6.41615,
+      "apyBase": 6.30876,
+      "apyReward": 0.10739,
+      "tvl": 691928,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "0ee26eaf-5c95-4c03-b248-45a0cafa25b8",
+      "project": "morpho-v1",
+      "symbol": "MEUSDC",
+      "apy": 6.34038,
+      "apyBase": 6.34038,
+      "apyReward": 0,
+      "tvl": 5215435,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "69cf831d-624a-4f23-b5e3-c0f63ad1fa01",
+      "project": "moonwell-lending",
+      "symbol": "USDC",
+      "apy": 6.32375,
+      "apyBase": 5.15184,
+      "apyReward": 1.17191,
+      "tvl": 6452596,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+      ],
+      "rewardTokens": [
+        "0xA88594D404727625A9437C3f886C7643872296AE"
+      ]
+    },
+    {
+      "pool_id": "ae297398-afc4-4823-a6e2-2a4b836c290f",
+      "project": "radiant-v2",
+      "symbol": "EURC",
+      "apy": 6.13282,
+      "apyBase": 6.13282,
+      "apyReward": null,
+      "tvl": 18311,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42"
+      ],
+      "rewardTokens": null
+    },
+    {
+      "pool_id": "652e70b1-6489-4e6c-93c7-40c1ec72e272",
+      "project": "fluid-lending",
+      "symbol": "GHO",
+      "apy": 6.1,
+      "apyBase": 2.79,
+      "apyReward": 3.31,
+      "tvl": 6243054,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee"
+      ],
+      "rewardTokens": [
+        "0x6Bb7a212910682DCFdbd5BCBb3e28FB4E8da10Ee",
+        "0x61e030a56d33e8260fdd81f03b162a79fe3449cd"
+      ]
+    },
+    {
+      "pool_id": "44390fb2-b3ad-46ee-a916-f21289f3cc88",
+      "project": "morpho-v1",
+      "symbol": "UUSDC",
+      "apy": 5.85332,
+      "apyBase": 5.85332,
+      "apyReward": 0,
+      "tvl": 1109721,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    },
+    {
+      "pool_id": "e5adf719-d8e7-4b36-a603-ed288483d13a",
+      "project": "radiant-v2",
+      "symbol": "USDC",
+      "apy": 5.1619,
+      "apyBase": 5.1619,
+      "apyReward": null,
+      "tvl": 759452,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": null
+    },
+    {
+      "pool_id": "c05a83a7-6416-49d2-a0b6-c1258873ac9d",
+      "project": "morpho-v1",
+      "symbol": "STEAKUSDA",
+      "apy": 4.95593,
+      "apyBase": 4.95593,
+      "apyReward": 0,
+      "tvl": 31772,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x0000206329b97DB379d5E1Bf586BbDB969C63274"
+      ],
+      "rewardTokens": []
+    },
+    {
+      "pool_id": "3e555b30-9197-47fd-bc46-e9caa944bbcc",
+      "project": "euler-v2",
+      "symbol": "EURC",
+      "apy": 4.8944,
+      "apyBase": 4.8944,
+      "apyReward": null,
+      "tvl": 19281,
+      "exposure": "single",
+      "pool_meta": "EVK Vault eEURC-1",
+      "underlyingTokens": [
+        "0x60a3E35Cc302bFA44Cb288Bc5a4F316Fdb1adb42"
+      ],
+      "rewardTokens": null
+    },
+    {
+      "pool_id": "7e0661bf-8cf3-45e6-9424-31916d4c7b84",
+      "project": "aave-v3",
+      "symbol": "USDC",
+      "apy": 4.36043,
+      "apyBase": 4.36043,
+      "apyReward": null,
+      "tvl": 101455763,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+      ],
+      "rewardTokens": null
+    },
+    {
+      "pool_id": "0c8567f8-ba5b-41ad-80de-00a71895eb19",
+      "project": "compound-v3",
+      "symbol": "USDC",
+      "apy": 4.28126,
+      "apyBase": 3.17675,
+      "apyReward": 1.1045,
+      "tvl": 1705295,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+      ],
+      "rewardTokens": [
+        "0x9e1028F5F1D5eDE59748FFceE5532509976840E0"
+      ]
+    },
+    {
+      "pool_id": "02cf4efe-3927-44ad-bf7e-5c286981591b",
+      "project": "morpho-v1",
+      "symbol": "PHYWETHBASE",
+      "apy": 4.01923,
+      "apyBase": 3.8439,
+      "apyReward": 0.17533,
+      "tvl": 112948,
+      "exposure": "single",
+      "pool_meta": null,
+      "underlyingTokens": [
+        "0x4200000000000000000000000000000000000006"
+      ],
+      "rewardTokens": [
+        "0xbaa5cc21fd487b8fcc2f632f3f4e8d37262a0842"
+      ]
+    }
+  ],
+  "yields_by_project": {
+    "morpho-v1": 151,
+    "aave-v3": 13,
+    "moonwell-lending": 17,
+    "fluid-lending": 5,
+    "compound-v3": 18,
+    "euler-v2": 20,
+    "radiant-v2": 8
+  },
+  "total_pools": 232
+}

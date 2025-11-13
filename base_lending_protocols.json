@@ -1,0 +1,787 @@
+{
+  "chain": "Base",
+  "total_protocols": 78,
+  "timestamp": 1762890694.507432,
+  "protocols": [
+    {
+      "name": "Aave V3",
+      "slug": "aave-v3",
+      "category": "Lending",
+      "tvl_total": 32997922200.63175,
+      "tvl_base": 979810546,
+      "url": "https://aave.com",
+      "flashloan_likely": true,
+      "flashloan_confidence": "high"
+    },
+    {
+      "name": "Morpho V1",
+      "slug": "morpho-v1",
+      "category": "Lending",
+      "tvl_total": 7135234831.075105,
+      "tvl_base": 2015273276,
+      "url": "https://app.morpho.org",
+      "flashloan_likely": true,
+      "flashloan_confidence": "high"
+    },
+    {
+      "name": "Fluid Lending",
+      "slug": "fluid-lending",
+      "category": "Lending",
+      "tvl_total": 1923921693.7969089,
+      "tvl_base": 61470314,
+      "url": "https://fluid.instadapp.io",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Venus Core Pool",
+      "slug": "venus-core-pool",
+      "category": "Lending",
+      "tvl_total": 1774607831.983518,
+      "tvl_base": 62403,
+      "url": "https://app.venus.io/#/core-pool",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Compound V3",
+      "slug": "compound-v3",
+      "category": "Lending",
+      "tvl_total": 1732748938.1133075,
+      "tvl_base": 50983810,
+      "url": "https://v3-app.compound.finance/",
+      "flashloan_likely": true,
+      "flashloan_confidence": "high"
+    },
+    {
+      "name": "Euler V2",
+      "slug": "euler-v2",
+      "category": "Lending",
+      "tvl_total": 1060272154.6876771,
+      "tvl_base": 9185189,
+      "url": "https://www.euler.finance",
+      "flashloan_likely": true,
+      "flashloan_confidence": "high"
+    },
+    {
+      "name": "River Omni-CDP",
+      "slug": "river-omni-cdp",
+      "category": "CDP",
+      "tvl_total": 500261408.07956475,
+      "tvl_base": 57678526,
+      "url": "https://app.river.inc/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Moonwell Lending",
+      "slug": "moonwell-lending",
+      "category": "Lending",
+      "tvl_total": 115920641.9807735,
+      "tvl_base": 107279066,
+      "url": "https://moonwell.fi",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "40 Acres",
+      "slug": "40-acres",
+      "category": "Lending",
+      "tvl_total": 41916101.133734524,
+      "tvl_base": 33817585,
+      "url": "https://www.40acres.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Sumer.money",
+      "slug": "sumer.money",
+      "category": "Lending",
+      "tvl_total": 39212897.06603421,
+      "tvl_base": 13425,
+      "url": "https://sumer.money",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Frankencoin",
+      "slug": "frankencoin",
+      "category": "CDP",
+      "tvl_total": 32574125.962134685,
+      "tvl_base": null,
+      "url": "https://frankencoin.com",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "ZeroLend Lending",
+      "slug": "zerolend-lending",
+      "category": "Lending",
+      "tvl_total": 31347700.31692536,
+      "tvl_base": 123131,
+      "url": "https://zerolend.xyz/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "TermFinance Lend",
+      "slug": "termfinance-lend",
+      "category": "Lending",
+      "tvl_total": 29118863.193528607,
+      "tvl_base": 145719,
+      "url": "https://term.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Seamless V2",
+      "slug": "seamless-v2",
+      "category": "Lending",
+      "tvl_total": 22955360.23926521,
+      "tvl_base": 10116559,
+      "url": "https://www.seamlessprotocol.com",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Folks Finance xChain",
+      "slug": "folks-finance-xchain",
+      "category": "Lending",
+      "tvl_total": 22829302.037058987,
+      "tvl_base": 232241,
+      "url": "https://xapp.folks.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Overnight Finance",
+      "slug": "overnight-finance",
+      "category": "CDP",
+      "tvl_total": 21509237.65558835,
+      "tvl_base": 9352358,
+      "url": "https://overnight.fi",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Native Credit Pool",
+      "slug": "native-credit-pool",
+      "category": "Lending",
+      "tvl_total": 15311598.979917686,
+      "tvl_base": 1253899,
+      "url": "https://native.org",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Teller",
+      "slug": "teller",
+      "category": "Lending",
+      "tvl_total": 9478070.652920168,
+      "tvl_base": 2282185,
+      "url": "https://teller.org",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Revert Lend",
+      "slug": "revert-lend",
+      "category": "Lending",
+      "tvl_total": 8582600.308749286,
+      "tvl_base": 1721351,
+      "url": "https://revert.finance/#/lending",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Extra Finance Xlend",
+      "slug": "extra-finance-xlend",
+      "category": "Lending",
+      "tvl_total": 7800131.323348417,
+      "tvl_base": 5889878,
+      "url": "https://xlend.extrafi.io/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Radiant V2",
+      "slug": "radiant-v2",
+      "category": "Lending",
+      "tvl_total": 7680696.091450071,
+      "tvl_base": 2547995,
+      "url": "https://radiant.capital/#/markets",
+      "flashloan_likely": true,
+      "flashloan_confidence": "high"
+    },
+    {
+      "name": "Silo V1",
+      "slug": "silo-v1",
+      "category": "Lending",
+      "tvl_total": 7647241.336190187,
+      "tvl_base": 534991,
+      "url": "https://app.silo.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "QiDao",
+      "slug": "qidao",
+      "category": "CDP",
+      "tvl_total": 6686044.105626709,
+      "tvl_base": 2919930,
+      "url": "https://app.mai.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Avalon Finance",
+      "slug": "avalon-finance",
+      "category": "Lending",
+      "tvl_total": 5593956.588939958,
+      "tvl_base": 35394,
+      "url": "https://www.avalonfinance.xyz",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "OmniBTC",
+      "slug": "omnibtc",
+      "category": "Lending",
+      "tvl_total": 3090433.053573269,
+      "tvl_base": 5,
+      "url": "https://www.omnibtc.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Impermax V2",
+      "slug": "impermax-v2",
+      "category": "Lending",
+      "tvl_total": 3007757.906365112,
+      "tvl_base": 1286247,
+      "url": "https://impermax.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Unitus",
+      "slug": "unitus",
+      "category": "Lending",
+      "tvl_total": 3003193.45023202,
+      "tvl_base": 38595,
+      "url": "https://unitus.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Tarot",
+      "slug": "tarot",
+      "category": "Lending",
+      "tvl_total": 2796595.912093815,
+      "tvl_base": 2285327,
+      "url": "https://www.tarot.to",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Seamless V1",
+      "slug": "seamless-v1",
+      "category": "Lending",
+      "tvl_total": 2620389.51731021,
+      "tvl_base": 2620389,
+      "url": "https://www.seamlessprotocol.com",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Ionic Protocol",
+      "slug": "ionic-protocol",
+      "category": "Lending",
+      "tvl_total": 2042238.8078521416,
+      "tvl_base": 733655,
+      "url": "https://www.ionic.money",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Impermax V3",
+      "slug": "impermax-v3",
+      "category": "Lending",
+      "tvl_total": 2032972.0473285746,
+      "tvl_base": 2024144,
+      "url": "https://impermax.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Parallel Protocol V3",
+      "slug": "parallel-protocol-v3",
+      "category": "CDP",
+      "tvl_total": 1321271.8234466533,
+      "tvl_base": 200967,
+      "url": "https://parallel.best/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "MortgageFi",
+      "slug": "mortgagefi",
+      "category": "Lending",
+      "tvl_total": 1276272.9788029138,
+      "tvl_base": 1150563,
+      "url": "https://mortgagefi.app",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Size Credit",
+      "slug": "size-credit",
+      "category": "Lending",
+      "tvl_total": 1161633.503511961,
+      "tvl_base": 452667,
+      "url": "https://size.credit/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Prime Protocol",
+      "slug": "prime-protocol",
+      "category": "Lending",
+      "tvl_total": 933448.513863435,
+      "tvl_base": 170910,
+      "url": "https://app.primeprotocol.xyz",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Ajna V2",
+      "slug": "ajna-v2",
+      "category": "Lending",
+      "tvl_total": 910986.3967807151,
+      "tvl_base": 54127,
+      "url": "https://www.ajna.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Timeswap V2",
+      "slug": "timeswap-v2",
+      "category": "Lending",
+      "tvl_total": 705924.8973000217,
+      "tvl_base": 63333,
+      "url": "https://app.timeswap.io",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "CREAM Lending",
+      "slug": "cream-lending",
+      "category": "Lending",
+      "tvl_total": 534163.7730597522,
+      "tvl_base": 562,
+      "url": "https://cream.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Preon Finance",
+      "slug": "preon-finance",
+      "category": "CDP",
+      "tvl_total": 487993.2307955969,
+      "tvl_base": 0,
+      "url": "https://app.preon.finance/borrow",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Sonne Finance",
+      "slug": "sonne-finance",
+      "category": "Lending",
+      "tvl_total": 365706.2785892902,
+      "tvl_base": 365633,
+      "url": "https://sonne.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "YLDR",
+      "slug": "yldr",
+      "category": "Lending",
+      "tvl_total": 321451.6227788314,
+      "tvl_base": 46518,
+      "url": "https://yldr.com",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "PrimeFi",
+      "slug": "primefi",
+      "category": "Lending",
+      "tvl_total": 247220.18978029786,
+      "tvl_base": 85371,
+      "url": "https://primefi.xyz/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Granary Finance",
+      "slug": "granary-finance",
+      "category": "Lending",
+      "tvl_total": 224963.31017384067,
+      "tvl_base": 0,
+      "url": "https://granary.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "MultichainZ",
+      "slug": "multichainz",
+      "category": "Lending",
+      "tvl_total": 224441.06931851272,
+      "tvl_base": 10,
+      "url": "https://dapp.multichainz.com/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "SYNO Finance",
+      "slug": "syno-finance",
+      "category": "Lending",
+      "tvl_total": 202284.3178338247,
+      "tvl_base": 1130,
+      "url": "https://syno.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Meridian Finance",
+      "slug": "meridian-finance",
+      "category": "CDP",
+      "tvl_total": 151993.23464348266,
+      "tvl_base": 4965,
+      "url": "https://www.meridianfinance.net/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Aloe",
+      "slug": "aloe",
+      "category": "Lending",
+      "tvl_total": 145016.75157025922,
+      "tvl_base": 42942,
+      "url": "https://aloe.capital",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "ZebraDAO",
+      "slug": "zebradao",
+      "category": "Lending",
+      "tvl_total": 135201.51636679695,
+      "tvl_base": 135201,
+      "url": "",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Vendor V2",
+      "slug": "vendor-v2",
+      "category": "Lending",
+      "tvl_total": 99152.98147274081,
+      "tvl_base": 8,
+      "url": "https://vendor.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "defi.money",
+      "slug": "defi.money",
+      "category": "CDP",
+      "tvl_total": 93543.36342284936,
+      "tvl_base": 509,
+      "url": "https://defi.money/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Button Wrappers",
+      "slug": "button-wrappers",
+      "category": "CDP",
+      "tvl_total": 61995.2222283258,
+      "tvl_base": 28466,
+      "url": "https://tranche.button.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Astaria V2",
+      "slug": "astaria-v2",
+      "category": "Lending",
+      "tvl_total": 53689.517422602075,
+      "tvl_base": 53689,
+      "url": "https://astaria.xyz/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Ploutos Money",
+      "slug": "ploutos-money",
+      "category": "Lending",
+      "tvl_total": 53005.47175480273,
+      "tvl_base": 13,
+      "url": "https://ploutos.money/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "MYSO V2",
+      "slug": "myso-v2",
+      "category": "Lending",
+      "tvl_total": 47669.53466912764,
+      "tvl_base": 0,
+      "url": "https://www.myso.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "PWN",
+      "slug": "pwn",
+      "category": "Lending",
+      "tvl_total": 43900.1878486532,
+      "tvl_base": 325,
+      "url": "https://pwn.xyz",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Fringe V2",
+      "slug": "fringe-v2",
+      "category": "Lending",
+      "tvl_total": 19622.331773162718,
+      "tvl_base": 17,
+      "url": "https://fringe.fi",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Blend Finance",
+      "slug": "blend-finance",
+      "category": "Lending",
+      "tvl_total": 12736.226776955875,
+      "tvl_base": 2,
+      "url": "https://www.blend.fan/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Polter Finance",
+      "slug": "polter-finance",
+      "category": "Lending",
+      "tvl_total": 9637.025330296017,
+      "tvl_base": 3732,
+      "url": "https://polter.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "SMARDEX P2P Lending",
+      "slug": "smardex-p2p-lending",
+      "category": "Lending",
+      "tvl_total": 8593.487811027328,
+      "tvl_base": 0,
+      "url": "https://smardex.io",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Grace",
+      "slug": "grace",
+      "category": "Lending",
+      "tvl_total": 5538.004178999083,
+      "tvl_base": 3677,
+      "url": "https://grace.loans/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "AImstrong",
+      "slug": "aimstrong",
+      "category": "Lending",
+      "tvl_total": 2543.465864831465,
+      "tvl_base": 1670,
+      "url": "https://www.aimstrong.ai/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "VMEX Finance",
+      "slug": "vmex-finance",
+      "category": "Lending",
+      "tvl_total": 2483.939690479206,
+      "tvl_base": 303,
+      "url": "",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Chedda Finance",
+      "slug": "chedda-finance",
+      "category": "Lending",
+      "tvl_total": 1998.0469178567291,
+      "tvl_base": 1998,
+      "url": "https://chedda.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Votre",
+      "slug": "votre",
+      "category": "Lending",
+      "tvl_total": 1441.7345305526753,
+      "tvl_base": 1440,
+      "url": "https://www.votre.xyz/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Mooncake Finance",
+      "slug": "mooncake-finance",
+      "category": "Lending",
+      "tvl_total": 1306.381597773309,
+      "tvl_base": 921,
+      "url": "",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Rebalance Finance",
+      "slug": "rebalance-finance",
+      "category": "Lending",
+      "tvl_total": 854.8988000182877,
+      "tvl_base": 1,
+      "url": "https://www.rebalance.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "YieldLend",
+      "slug": "yieldlend",
+      "category": "Lending",
+      "tvl_total": 792.6638473902352,
+      "tvl_base": 792,
+      "url": "https://yieldlend.xyz",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Basin DAO",
+      "slug": "basin-dao",
+      "category": "CDP",
+      "tvl_total": 402.0541921694923,
+      "tvl_base": 402,
+      "url": "",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Lava",
+      "slug": "lava",
+      "category": "Lending",
+      "tvl_total": 380.41050730943516,
+      "tvl_base": 208,
+      "url": "https://lava.ag",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Phase",
+      "slug": "phase",
+      "category": "CDP",
+      "tvl_total": 119.71016439731164,
+      "tvl_base": 118,
+      "url": "https://phase.cash",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Size Lending",
+      "slug": "size-lending",
+      "category": "Lending",
+      "tvl_total": 5.814289375709357,
+      "tvl_base": 5,
+      "url": "https://size.cash",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Snail Finance",
+      "slug": "snail-finance",
+      "category": "Lending",
+      "tvl_total": 2.0165163854085986,
+      "tvl_base": 2,
+      "url": "",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Tempest Capital",
+      "slug": "tempest-capital",
+      "category": "Lending",
+      "tvl_total": 0.972585515186958,
+      "tvl_base": 0,
+      "url": "https://www.tempest.capital",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "SwirlLend",
+      "slug": "swirllend",
+      "category": "Lending",
+      "tvl_total": 0.12620422400200002,
+      "tvl_base": 0,
+      "url": "",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "UncleSam Protocol",
+      "slug": "unclesam-protocol",
+      "category": "Lending",
+      "tvl_total": 0.00701570956487921,
+      "tvl_base": 0,
+      "url": "https://unclesam.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Magnate Finance",
+      "slug": "magnate-finance",
+      "category": "Lending",
+      "tvl_total": 0,
+      "tvl_base": 0,
+      "url": "https://www.magnate.finance",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "Pike",
+      "slug": "pike",
+      "category": "Lending",
+      "tvl_total": 0,
+      "tvl_base": 0,
+      "url": "https://www.pike.finance/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    },
+    {
+      "name": "MAHA.xyz",
+      "slug": "maha.xyz",
+      "category": "CDP",
+      "tvl_total": 0,
+      "tvl_base": null,
+      "url": "https://maha.xyz/",
+      "flashloan_likely": false,
+      "flashloan_confidence": "unknown"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-11-15T08:12:32.236382",
+  "endpoints": {
+    "Custom Reth (8546)": {
+      "connection": {
+        "success": true,
+        "error": null
+      },
+      "newHeads": {
+        "supported": true,
+        "count": 11,
+        "errors": []
+      },
+      "newPendingTransactions": {
+        "supported": true,
+        "count": 0,
+        "errors": []
+      },
+      "logs": {
+        "supported": true,
+        "count": 2144,
+        "errors": []
+      }
+    }
+  }
+}
